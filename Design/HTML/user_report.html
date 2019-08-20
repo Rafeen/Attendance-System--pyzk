@@ -1,0 +1,218 @@
+{% extends "background.html" %}
+{% block content %}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <!-- Page Title -->
+        <div class="row">
+            <div class="col-sm-8 col-6">
+                <h4 class="page-title">All Attendance</h4>
+            </div>
+            <div class="col-sm-4 col-6 text-right">
+                <a href="#" class="btn add-btn" data-toggle="modal" data-target="#manual-date-input"><i
+                        class="fa fa-plus"></i>Manual Date Input</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <!-- Search Filter -->
+                <div class="row filter-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3"></div>
+
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group form-focus select-focus">
+                            <select class="select floating" data-live-search="true">
+                                <option>Muntasir Mahmood Sami</option>
+                                <option>Abdullah Al Shakib</option>
+                                <option>Md. Fahim</option>
+                                <option>Akash Bhowmick</option>
+                                <option>Md. Ishtiaque Sayeed Khan</option>
+                                <option>Banedict Fring Drong</option>
+                            </select>
+                            <label class="focus-label">Select Employee</label>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 col-md-2 col-lg-2">
+                        <a href="#" class="btn btn-success btn-block"> Search </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 col-lg-3"></div>
+                </div>
+                <!-- /Search Filter -->
+                <div class="col-lg-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered custom-table mb-0 datatable">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Punch In</th>
+                                <th>Punch Out</th>
+                                <th>Total Hours</th>
+                                <th>Input Type</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>08.30 AM</td>
+                                <td>07.35 PM</td>
+                                <td>11.00 hrs</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-success">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>09.05 AM</td>
+                                <td>06.15 PM</td>
+                                <td>09.10 hrs</td>
+                                <td>Manual</td>
+                                <td><span class="badge badge-success">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>09.20 AM</td>
+                                <td>06.35 PM</td>
+                                <td>09.15 hrs</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-success">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>10.00 AM</td>
+                                <td>07.03 PM</td>
+                                <td>08.20 hrs</td>
+                                <td>Manual</td>
+                                <td><span class="badge badge-success">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>11.00 AM</td>
+                                <td>7.00 PM</td>
+                                <td>08.00 hrs</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-danger">Late</span></td>
+                                Muntasir Mahmood Sami
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>11.00 AM</td>
+                                <td>07.00 PM</td>
+                                <td>08.00 hrs</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-danger">Late</span></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>09.20 AM</td>
+                                <td>06.35 PM</td>
+                                <td>09.15 hrs</td>
+                                <td>Manual</td>
+                                <td><span class="badge badge-success">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>11.00 AM</td>
+                                <td>7.00 PM</td>
+                                <td>08.00 hrs</td>
+                                <td>Manual</td>
+                                <td><span class="badge badge-danger">Late</span></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>11.00 AM</td>
+                                <td>07.00 PM</td>
+                                <td>08.00 hrs</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-danger">Late</span></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>09.20 AM</td>
+                                <td>06.35 PM</td>
+                                <td>09.15 hrs</td>
+                                <td>manual</td>
+                                <td><span class="badge badge-success">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Muntasir Mahmood Sami</td>
+                                <td>11.00 AM</td>
+                                <td>07.00 PM</td>
+                                <td>08.00 hrs</td>
+                                <td>Auto</td>
+                                <td><span class="badge badge-danger">Late</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Content -->
+
+    <!-- manual-date-input -->
+    <div id="manual-date-input" class="modal custom-modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Manual Date Input</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Select Employee <span class="text-danger">*</span></label>
+                            <select class="select">
+                                <option>-</option>
+                                <option>John Doe</option>
+                                <option>Richard Miles</option>
+                                <option>John Smith</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date <span class="text-danger">*</span></label>
+                            <div class="cal-icon">
+                                <input class="form-control datetimepicker" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Time <span class="text-danger">*</span></label>
+                            <div class="time-icon">
+                                <input class="form-control timepicker" type="text">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Reason <span class="text-danger">*</span></label>
+                            <textarea rows="4" class="form-control"></textarea>
+                        </div>
+                        <div class="submit-section">
+                            <button class="btn btn-primary submit-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Add Overtime Modal -->
+
+</div>
+<!-- Page Wrapper -->
+{% endblock %}

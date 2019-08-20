@@ -1,0 +1,35 @@
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title">Attendance System</li>
+                <li id="datewise" class="" onclick="active()">
+                    <a href="{% url 'today' %}"><i class="la la-dashboard"></i> <span>Datewise</span></a>
+                </li>
+
+                <li id="all-attendance">
+                    <a href="{% url 'all-attendance-report' %}"><i class="la la-institution"></i> <span>All Attendance</span></a>
+                </li>
+
+                <li id="device-user">
+                    <a href="{% url 'device-user-list' %}"><i class="la la-users"></i> <span>Device User List</span></a>
+                </li>
+
+                <li id="user-details">
+                    <a href="{% url 'user-attendance-report' %}"><i class="la la-columns"></i> <span>User Details</span></a>
+                </li>
+
+                <!--<li class="submenu">-->
+                <!--<a href="#"><i class="la la-columns"></i> <span> User Profile </span> <span-->
+                <!--class="menu-arrow"></span></a>-->
+                <!--<ul style="display: none;">-->
+                <!--<li><a href="forgot-password.html"> Forgot Password </a></li>-->
+                <!--<li><a href="profile.html"> Employee Profile </a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- /Sidebar -->

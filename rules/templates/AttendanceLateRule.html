@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body_block %}
+    {{ form.date }}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Attendance Late Rules :</h1>
+            <form method="post" action="">
+                {% csrf_token %}
+                {# A more "HTML" way of creating the login form#}
+                {{  form.as_p }}
+
+                <input type="submit" name="" value="Submit">
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

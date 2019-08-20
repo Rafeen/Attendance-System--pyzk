@@ -1,0 +1,77 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+
+            <!-- Page Title -->
+            <div class="row">
+                <div class="col-sm-8 col-6">
+                    <h4 class="page-title">All Transaction</h4>
+                </div>
+                <div class="col-sm-4 col-6 text-right">
+                    <a href="#" class="btn add-btn" data-toggle="modal" data-target="#manual-date-input"><i
+                            class="fa fa-plus"></i>Manual Date Input</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- Search Filter -->
+                    <div class="row filter-row">
+                        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group form-focus">
+                                <div class="cal-icon">
+                                    <input type="text" class="form-control floating datetimepicker">
+                                </div>
+                                <label class="focus-label">Date</label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <a href="#" class="btn btn-success btn-block"> Search </a>
+                        </div>
+
+                        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+                    </div>
+                    <!-- /Search Filter -->
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered custom-table mb-0 datatable">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Punch Time</th>
+{#                                    <th>Total Hours</th>#}
+{#                                    <th>Input Type</th>#}
+{#                                    <th>Late Status</th>#}
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for x in attendance %}
+
+                                    <tr>
+                                        <td>{{ forloop.counter}}</td>
+                                        <td>{{ x.user_id.name}}</td>
+                                        <td>{{ x.datetime.date }}</td>
+                                        <td>{{ x.datetime.time }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Content -->
+
+        <!-- manual-date-input -->
+        {% include 'manual_input.html' %}
+        <!-- /Add Overtime Modal -->
+
+    </div>
+{% endblock %}

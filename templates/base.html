@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Attendance System</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!-- XDSoft DateTimePicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            {# Django Home Link / Admin Link / Register Link#}
+            <li><a class="navbar-brand" href="{% url 'index' %}">DJANGO</a></li>
+            {% if user.is_authenticated %}
+            <li><a class="navbar-brand" href="{% url 'admin:index' %}">Admin</a></li>
+            <li><a class="navbar-brand" href="{% url 'manual-attendance' %}">Manual Input</a></li>
+            <li><a class="navbar-brand" href="{% url 'sync-attendance' %}">Sync Latest</a></li>
+            <li><a class="navbar-brand" href="{% url 'sync-user' %}">Fetch All User</a></li>
+            <li><a class="navbar-brand" href="{% url 'device-user-edit' %}">Edit User</a></li>
+            <li><a class="navbar-brand" href="{% url 'device-user-list' %}">List User</a></li>
+            <li><a class="navbar-brand" href="{% url 'all-transaction' %}">Attendance table</a></li>
+            <li><a class="navbar-brand" href="{% url 'late-rules' %}">Late Rules</a></li>
+{#          <li><a class="navbar-brand" href="{% url 'device-user-table' %}">Attendance table</a></li>#}
+
+            {# Some logic on what to display for last item#}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a class="navbar-brand" href="{% url 'register' %}">Register</a></li>
+                <li><a class="navbar-link" href="{% url 'user_login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    {% block body_block %}
+    {% endblock %}
+</div>
+</body>
+</html>

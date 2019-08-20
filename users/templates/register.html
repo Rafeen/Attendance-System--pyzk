@@ -1,0 +1,89 @@
+{% extends "background.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<style>
+    .parsley-required{
+        color: #ff0000;
+    }
+</style>
+<div class="main-wrapper">
+    <div class="account-content">
+        <div class="container">
+
+            <!-- Account Logo -->
+            <div class="account-logo">
+                <a href="index.html"><img src="{% static "img/logo.png" %}" alt="CodeSmith Tech Ltd."></a>
+            </div>
+            <!-- /Account Logo -->
+
+            <div class="register-box">
+                <div class="account-wrapper">
+                    <h3 class="account-title">Register</h3>
+                    <p class="account-subtitle">Register to Attendance System</p>
+
+                    <!-- Account Form -->
+                    <form method="post" data-parsley-validate="">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group" required="">
+                                    <label>User Name</label>
+                                    {{ user_form.username|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    {{ user_form.password|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+{#                                    <label>Full Name</label>#}
+                                    {{ profile_form.full_name|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+{#                                    <label>Department <span class="text-danger">*</span></label>#}
+                                    {{ profile_form.department|as_crispy_field }}
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+{#                                    <label>Employee ID <span class="text-danger">*</span></label>#}
+                                    {{ profile_form.employee_id|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+{#                                    <label>App User ID <span class="text-danger">*</span></label>#}
+                                    {{ profile_form.app_user_id|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+{#                                    <label>Role <span class="text-danger">*</span></label>#}
+                                    {{ profile_form.role|as_crispy_field }}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group submit-section">
+                            <button class="btn btn-primary account-btn" type="submit">Register</button>
+                        </div>
+
+                        <div class="account-footer">
+                            <p>Already have an account? <a href="{% url 'user_login' %}">Login</a></p>
+                        </div>
+                    </form>
+                    <!-- /Account Form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

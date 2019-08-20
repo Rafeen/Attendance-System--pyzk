@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="CodeSmithTech Attendance System">
+    <meta name="keywords" content="Attendance System, minimal, responsive, CRM, Projects ">
+    <meta name="author" content="MD.Fahim_CodeSmithTech">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Approval</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!-- Lineawesome CSS -->
+    <link rel="stylesheet" href="assets/css/line-awesome.min.css">
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
+
+    <!-- Dropdown Select CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+    <!-- Sweetalart CSS -->
+    <link rel="stylesheet" href="assets/css/sweetalert.css"/>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Main Wrapper -->
+<div class="main-wrapper">
+
+    <!-- Header -->
+    <div class="header">
+
+        <!-- Logo -->
+        <div class="header-left">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" width="40" height="40" alt="">
+            </a>
+        </div>
+        <!-- /Logo -->
+
+        <a id="toggle_btn" href="javascript:void(0);">
+					<span class="bar-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+        </a>
+
+        <!-- Header Title -->
+        <div class="page-title-box">
+            <h3>CodeSmith Tech Ltd.</h3>
+        </div>
+        <!-- /Header Title -->
+
+        <a id="mobile_btn" class="mobile_btn" href="#sidebar"><i class="fa fa-bars"></i></a>
+
+        <!-- Header Menu -->
+        <ul class="nav user-menu">
+
+            <li class="nav-item dropdown has-arrow main-drop">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img src="assets/img/profiles/md.fahim.jpg" alt="">
+							<span class="status online"></span></span>
+                    <span>Admin</span>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </li>
+        </ul>
+        <!-- /Header Menu -->
+
+        <!-- Mobile Menu -->
+        <div class="dropdown mobile-user-menu">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
+                    class="fa fa-ellipsis-v"></i></a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="profile.html">My Profile</a>
+                <a class="dropdown-item" href="settings.html">Settings</a>
+                <a class="dropdown-item" href="login.html">Logout</a>
+            </div>
+        </div>
+        <!-- /Mobile Menu -->
+
+    </div>
+    <!-- /Header -->
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="la la-home"></i> <span> Home</span></a>
+                    </li>
+                    <li class="menu-title">Attendance System</li>
+                    <li>
+                        <a href="datewise.html"><i class="la la-dashboard"></i> <span>Datewise Attendance</span></a>
+                    </li>
+
+                    <li>
+                        <a href="allattendance.html"><i class="la la-institution"></i> <span>All Attendance</span></a>
+                    </li>
+
+                    <li>
+                        <a href="userattendance.html"><i class="la la-users"></i> <span>All Users</span></a>
+                    </li>
+
+                    <li>
+                        <a href="userdeatails.html"><i class="la la-columns"></i> <span>User Deatils</span></a>
+                    </li>
+                    <li>
+                        <a href="rules.html"><i class="la la-pencil-square"></i> <span>Rules</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="approval.html"><i class="la la-ticket"></i> <span>Approval</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Sidebar -->
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+
+            <!-- Page Title -->
+            <div class="row">
+                <div class="col-sm-8 col-6">
+                    <h4 class="page-title">Approval </h4>
+                </div>
+                <!--<div class="col-sm-4 col-6 text-right">-->
+                <!--<a href="#" class="btn add-btn" data-toggle="modal" data-target="#create-user"><i-->
+                <!--class="fa fa-plus"></i>Create User</a>-->
+                <!--</div>-->
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered custom-table mb-0 datatable">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Username</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Reason</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Muntasir Mahmood Sami</td>
+                                    <td>2017-09-14</td>
+                                    <td>09.05 AM</td>
+                                    <td data-toggle="tooltip"
+                                        data-placement="top" title="Going to Hospital ">Going to Hospital
+                                    </td>
+                                    <td class="text-center">
+                                    	<span class="badge badge-success" href="javascript:void(0);"> <i class="fa fa-dot-circle-o text-success"></i> Approved </span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-success" title="Approved"><i
+                                                class="fa fa-check"></i></button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger js-sweetalert"
+                                                title="Declined" data-type="confirm"><i class="fa fa-ban"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Abdullah Al Shakib</td>
+                                    <td>2017-10-14</td>
+                                    <td>09.05 AM</td>
+                                    <td data-toggle="tooltip"
+                                        data-placement="top" title="Going to .....">Going to .....
+                                    </td>
+                                    <td class="text-center">
+                                    	<span class="badge badge-pending" href="javascript:void(0);"> <i class="fa fa-dot-circle-o text-purple"></i> Pending </span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-success" title="Approved"><i
+                                                class="fa fa-check"></i></button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger js-sweetalert"
+                                                title="Declined" data-type="confirm"><i class="fa fa-ban"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Md. Fahim</td>
+                                    <td>2018-07-15</td>
+                                    <td>09.05 AM</td>
+                                    <td data-toggle="tooltip"
+                                        data-placement="top" title="Going to .....">Going to .......
+                                    </td>
+                                    <td class="text-center">
+                                    	<span class="badge badge-danger" href="javascript:void(0);">  <i class="fa fa-dot-circle-o text-danger"></i> Rejected </span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-success" title="Approved"><i
+                                                class="fa fa-check"></i></button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger js-sweetalert"
+                                                title="Declined" data-type="confirm"><i class="fa fa-ban"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Akash Bhowmick</td>
+                                    <td>2018-09-25</td>
+                                    <td>09.05 AM</td>
+                                    <td>Going to Hospital</td>
+                                    <td class="text-center">
+                                        <div class="action-label">
+                                            <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
+                                                <i class="fa fa-dot-circle-o text-purple"></i> Pending
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-success" title="Approved"><i
+                                                class="fa fa-check"></i></button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger js-sweetalert"
+                                                title="Declined" data-type="confirm"><i class="fa fa-ban"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Content -->
+
+        <!-- create-user -->
+        <div id="create-user" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Create User</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label>User Name</label>
+                                    <input class="form-control" type="text">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label>Password</label>
+                                    <input class="form-control" type="password">
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label>Full Name</label>
+                                    <input class="form-control" type="text">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label>Department <span class="text-danger">*</span></label>
+                                    <select class="select">
+                                        <option data-tokens="">Select Department</option>
+                                        <option data-tokens="">Software Development Manager</option>
+                                        <option data-tokens="">Front-End Designer</option>
+                                        <option data-tokens="">Software Engineer</option>
+                                        <option data-tokens="">Business Executive</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label>Employee ID <span class="text-danger">*</span></label>
+                                    <select class="select">
+                                        <option data-tokens="">Select Employee ID</option>
+                                        <option data-tokens="">Select Employee ID</option>
+                                        <option data-tokens="">01</option>
+                                        <option data-tokens="">02</option>
+                                        <option data-tokens="">03</option>
+                                        <option data-tokens="">04</option>
+                                        <option data-tokens="">05</option>
+                                        <option data-tokens="">06</option>
+                                        <option data-tokens="">07</option>
+                                        <option data-tokens="">08</option>
+                                        <option data-tokens="">09</option>
+                                        <option data-tokens="">10</option>
+                                        <option data-tokens="">11</option>
+                                        <option data-tokens="">12</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label>App User ID <span class="text-danger">*</span></label>
+                                    <select class="select">
+                                        <option data-tokens="">Select App ID</option>
+                                        <option data-tokens="">121387147</option>
+                                        <option data-tokens="">598984388</option>
+                                        <option data-tokens="">696596677</option>
+                                        <option data-tokens="">276554677</option>
+                                        <option data-tokens="">646765966</option>
+                                        <option data-tokens="">948566711</option>
+                                        <option data-tokens="">5355487147</option>
+                                        <option data-tokens="">353535388</option>
+                                        <option data-tokens="">696596677</option>
+                                        <option data-tokens="">534636677</option>
+                                        <option data-tokens="">976765966</option>
+                                        <option data-tokens="">5983598041</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label>Role <span class="text-danger">*</span></label>
+                                    <select class="select">
+                                        <option data-tokens="">Select Role</option>
+                                        <option data-tokens="">Admin</option>
+                                        <option data-tokens="">Employee</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn" type="submit">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Add Overtime Modal -->
+
+    </div>
+    <!-- Page Wrapper -->
+
+</div>
+<!-- /Main Wrapper -->
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay" data-reff=""></div>
+
+<!-- jQuery -->
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- Slimscroll JS -->
+<script src="assets/js/jquery.slimscroll.min.js"></script>
+
+<!-- Select2 JS -->
+<script src="assets/js/select2.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+
+<!-- Datatable JS -->
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- Datetimepicker JS -->
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- SweetAlert Plugin Js -->
+<script src="assets/js/sweetalert.min.js"></script>
+<script src="assets/js/dialogs.js"></script>
+
+
+<!-- Custom JS -->
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

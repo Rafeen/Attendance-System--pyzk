@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body_block %}
+    {{ form.date }}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Manual Date Input :</h1>
+
+            <form method='POST' action="/edit/" >
+                {% csrf_token %}
+                <input type='text' name='device_username' placeholder='Name'/><br/>
+                <input type='text' name='id' placeholder='id' /><br/>
+                <input type='submit' value='edit' />
+            </form>
+
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("#id_datetime").datetimepicker({
+                format: 'd/m/Y H:i',
+            });
+        });
+    </script>
+
+{% endblock %}
+
+
+
+
+
+

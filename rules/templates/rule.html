@@ -1,0 +1,96 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+    <div class="page-wrapper">
+
+        <!-- Page Content -->
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="col-lg-12">
+                            <div class="content container-fluid">
+                                <form method="POST" action="{% url 'office-rules' %}">
+                                    {% csrf_token %}
+                                    <h3 class="page-title">Create Office Shift</h3>
+                                    <div class="row row-top">
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label>Name <span class="text-danger">*</span></label>
+                                                <input class="form-control" type="text" name="name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label>Office Start Time</label>
+                                                <div class="time-icon">
+                                                    <input class="form-control timepicker" type="text" name="start">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label>Office End Time</label>
+                                                <div class="time-icon">
+                                                    <input class="form-control timepicker" type="text" name="end">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row div-differ">
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label>Exceptions</label>
+                                                <select name='exception' id='type'
+                                                        class="form-control select col-sm-4 col-md-4 col-lg-4">
+                                                    <option value="exceptions" ><p class="btn btn-rule btn-sm"
+                                                                                  data-toggle="modal"
+                                                                                  data-target="#newexception">New
+                                                        Exceptions</p></option>
+                                                    <option value="0">----</option>
+                                                    {% for exception in exceptions %}
+                                                        <option value="{{ exception.id }}">{{ exception.name }}</option>
+                                                    {% endfor %}
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label>Late Limit</label>
+                                                <div class="form-group pull-right"><a class="btn btn-rule btn-sm"
+                                                                                      data-toggle="modal"
+                                                                                      data-target="#laterule"> Edit Late
+                                                    Rule </a></div>
+                                                <select class="form-control select col-sm-4 col-md-4 col-lg-4" name="late">
+                                                    {% for time in late_times %}
+                                                        <option value="{{ time.id }}">{{ time.late_limit }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit-section">
+                                        <button class="btn btn-primary submit-btn">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Content -->
+
+        <!-- New Exception -->
+        {% include 'exception.html' %}
+
+        <!-- Late Rule-->
+        {% include 'late.html' %}
+
+        <!-- /Add Overtime Modal -->
+    </div>
+    <!-- /Page Wrapper -->
+
+
+
+{% endblock %}
