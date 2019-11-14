@@ -1,1 +1,1 @@
-Attendance and leave automation solutiom
+Attendance and leave automation solution
